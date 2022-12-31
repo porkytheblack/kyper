@@ -35,8 +35,10 @@ impl Server {
                     let mut buffer = [0; 1024];
                     let response = match stream.read(&mut buffer) {
                         Ok(_) => {
+
                             match Request::try_from(&buffer[..]) {
                                 Ok(request) => {
+                                    dbg!(&request);
                                     handler.handle_request(
                                         request
                                     )
