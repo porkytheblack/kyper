@@ -12,8 +12,8 @@ pub use kyper_handler::KyperHandler;
 */
 
 fn main() {
-    let server_listening_on = String::from("127.0.0.1:8080");
-    let port = &server_listening_on[10..];
+    let server_listening_on = String::from("0.0.0.0:8080");
+    let port = &server_listening_on[8..];
     let default_path = format!("{}/public", env!("CARGO_MANIFEST_DIR"));
     println!("PORT:: {}", port);
 
